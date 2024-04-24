@@ -3,3 +3,4 @@ Exercícios feitos com lista duplamente encadeada para aula de Estrutura de dado
 
 ## Grupo:
 Daniel de Miranda Almeida (241708065)
+Guilherme Carvalho Cunha (231708013)
