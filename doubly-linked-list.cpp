@@ -80,6 +80,8 @@ void iguais(){
 }
 
 Node *createNode(int iPayload){
+    // Cria e inicializa um nó.
+    
     Node *temp = (Node *)malloc(sizeof(Node));
     temp->iPayload = iPayload;
     temp->ptrNext = nullptr;
@@ -89,6 +91,7 @@ Node *createNode(int iPayload){
 }
 
 void displayList(Node *node){
+    // Exibe todos os elementos da lista.
 
     // Se o nó passado é apenas um ponteiro nulo.
     if (node == nullptr){
@@ -145,11 +148,13 @@ void insertEnd(Node** head, int iPayload){
     while (temp->ptrNext != nullptr)
         temp = temp->ptrNext;
 
-    newNode->ptrPrev = temp; // newNode aponta para o fim da lista
-    temp->ptrNext = newNode; // Antigo último elemento aponta para o novo nó
+    newNode->ptrPrev = temp; 
+    temp->ptrNext = newNode;
 }
 
 void insertAfter(Node* ptrLocation, int iPayload){
+    // Insere um nó com o valor recebido após um nó determinado.
+    
     if (ptrLocation == nullptr){
         cout << "Location é NULL" << endl;
         return;
@@ -206,6 +211,8 @@ void deleteNode(Node** head, Node*ptrDelete){
 }
 
 void insertBefore(Node** head, Node* ptrLocation, int iPayload){
+    // Insere um nó com o valor recebido antes de um nó determinado.
+    
     if(ptrLocation == nullptr){
         cout << "ptrLocation é NULL" << endl;
 
@@ -242,6 +249,8 @@ void insertBefore(Node** head, Node* ptrLocation, int iPayload){
 }
 
 Node *searchNodeByValue(Node **head, int iValue){
+    // Procura um nó na lista pelo valor nele contido e o retorna. 
+    
     if((*head) == nullptr){
         cout << "Lista vazia." << endl;
         return nullptr;
@@ -268,15 +277,7 @@ void DeleteNodeByValue(Node** head, int iValue){
     // o fazem.
 
     Node* search = searchNodeByValue(head, iValue);
-    
     deleteNode(head, search);
 
     return;
 }
-
-// Conferir insert before para primeiro elemento
-
-// Exercício 2 elaborar a função válida Node* searchNodeByValue(Node*, int).
-// Exercício 1 elaborar a função válida void insertBefore(Node*, int).
-
-// Exercício 3 elaborar a função válida void deleteNodebyValue(Node**, int).
